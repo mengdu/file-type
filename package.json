@@ -1,5 +1,5 @@
 {
-  "name": "file-type",
+  "name": "file-type-js",
   "version": "0.1.0",
   "description": "A file type checking library",
   "main": "file-type.js",
@@ -13,6 +13,9 @@
   },
   "keywords": [
     "file-type"
+  ],
+  "files": [
+    "file-type.js"
   ],
   "author": "lanyueos@qq.com",
   "license": "MIT",
