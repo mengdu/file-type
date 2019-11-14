@@ -1,0 +1,19 @@
+{
+  "name": "file-type",
+  "version": "0.1.0",
+  "description": "A file type checking library",
+  "main": "file-type.js",
+  "scripts": {
+    "dev": "dev serve -owp 3002",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mengdu/file-type.git"
+  },
+  "keywords": [
+    "file-type"
+  ],
+  "author": "lanyueos@qq.com",
+  "license": "MIT"
+}
