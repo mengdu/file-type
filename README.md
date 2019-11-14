@@ -4,6 +4,19 @@ A file type checking library
 
 > Detect the file type from Buffer, ArrayBuffer, File, Bolb
 
+```ls
+npm install file-type-js
+```
+
+```js
+const FileType = require('file-type-js')
+const buf = fs.readFileSync(path.resolve(__dirname, 'files/test.jpg'))
+
+console.log(await FileType.is(buf, 'jpg'))
+```
+
+**browser**
+
 ```html
 <script src="./file-type.js"></script>
 <script>
