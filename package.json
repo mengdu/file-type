@@ -5,7 +5,7 @@
   "main": "file-type.js",
   "scripts": {
     "dev": "dev serve -owp 3002",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,12 @@
     "file-type"
   ],
   "author": "lanyueos@qq.com",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  },
+  "jest": {
+    "testRegex": "test/.*.jest.js?$",
+    "testEnvironment": "node"
+  }
 }
