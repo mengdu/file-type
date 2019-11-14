@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>File-Type</title>
+</head>
+<body>
+  <input type="file" id="file" />
+  <div id="types"></div>
+
+  <p>
+    <button id="valid">验证</button>
+  </p>
+  <div id="result"></div>
+<script src="./file-type.js"></script>
+<script>
+  var fileInput = document.getElementById('file')
+  var typebox = document.getElementById('types')
+  var validBtn = document.getElementById('valid')
+  var result = document.getElementById('result')
+  var html = []
+  var types = $FileType.fileTypes
+
+  for (var type in types) {
+    html.push('<label><input type="checkbox" name="checkbox" value="' + type + '" />' + type + '</label>')
+  }
+
+  typebox.innerHTML = html.join('')
+
+  var file = null
+  validBtn.onclick = function () {
+    if (!file) return alert('请选择文件')
+    var checkboxs = document.getElementsByName('checkbox')
+    for (var i = 0; i < checkboxs.length; i++) {
+      if (checkboxs[i].checked) {
+        (function (i) {
+          $FileType.is(file, checkboxs[i].value).then(function (valid) {
+            console.log(checkboxs[i].value, valid)
+          })
+        })(i)
+      }
+    }
+  }
+
+  fileInput.addEventListener('change', function () {
+    console.log(fileInput.files)
+    file = fileInput.files[0]
+
+    if (!file) return
+
+    var extname = (file.name.match(/\.(\w*)$/)[1]).toLocaleLowerCase()
+
+    $FileType.is(file, extname).then(function (valid) {
+      console.log(extname, valid)
+    })
+  })
+</script>
+</body>
+</html>
